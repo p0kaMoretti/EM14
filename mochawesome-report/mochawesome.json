@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-01-20T02:07:09.437Z",
+    "end": "2022-01-20T02:07:09.864Z",
+    "duration": 427,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d151fcd4-87d3-4b6b-af62-c3611dd4036c",
+      "title": "",
+      "fullFile": "cypress/integration/exercicio-api.spec.js",
+      "file": "cypress/integration/exercicio-api.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4391022b-824b-4588-afe8-c490378911bb",
+          "title": "Testes da Funcionalidade Usuários",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve cadastrar um usuário com sucesso",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve cadastrar um usuário com sucesso",
+              "timedOut": null,
+              "duration": 364,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const fullEmail = `${email}${providers[Math.floor(Math.random() * (providers.length - 1))]}`;\nconst providers = [\"@apple.com\", \"@gmail.com\", \"@pokemon.com\"];\nconst nome = `Teste ${Math.floor(Math.random() * 100000000)}`;\ncy.request({\n  method: 'POST',\n  url: 'usuarios',\n  body: {\n    \"nome\": nome,\n    \"email\": fullEmail,\n    \"password\": \"teste\",\n    \"administrador\": \"true\"\n  }\n}).then(response => {\n  expect(response.status).to.equal(201), expect(response.body.message).to.equal('Cadastro realizado com sucesso');\n});",
+              "err": {
+                "message": "ReferenceError: email is not defined",
+                "estack": "ReferenceError: email is not defined\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\exercicio-api.spec.js:120:23)",
+                "diff": null
+              },
+              "uuid": "15aae6eb-9371-4a94-b555-7af2373fea4f",
+              "parentUUID": "4391022b-824b-4588-afe8-c490378911bb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "15aae6eb-9371-4a94-b555-7af2373fea4f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 364,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
