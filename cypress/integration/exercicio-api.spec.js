@@ -34,10 +34,10 @@ describe('Testes da Funcionalidade Usuários', () => {
     });
 
     it('Deve validar um usuário com email inválido', () => {
-        cy.cadastrarUsuario('Koala', 'marilou@qa.com.br', 'teste', 'true')
+        cy.emailInvalido()
             .then((response) => {
                 expect(response.status).to.equal(400)
-                expect(response.body.message).to.equal('Este email já está sendo usado')
+                expect(response.body.email).to.equal('email deve ser um email válido')
             })
     });
 
