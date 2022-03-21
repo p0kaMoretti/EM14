@@ -87,7 +87,7 @@ Cypress.Commands.add('token', (email, senha) => {
  })
 
  Cypress.Commands.add('emailInvalido', ()=>{
-    const providers = ["@applecom", "@gmailcom", "@pokemoncom"];
+    const providers = ["_apple.com", "*gmail.com", "#pokemon.com"];
     const email = Math.floor(Math.random() * 100000).toString(16);
     const fullEmail = `${email}${providers[Math.floor(Math.random() * (providers.length - 1))]}`;
     const nome = `Teste ${Math.floor(Math.random() * 100000000)}`
